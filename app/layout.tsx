@@ -14,7 +14,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
-      <body className="m-0 flex flex-col border-2 border-solid border-black font-jost md:h-screen md:w-screen md:flex-row md:border-none">
+      <body className="m-0 flex h-screen w-screen flex-col overflow-hidden border-2 border-solid border-black font-jost md:flex-row md:border-none">
         <NavBar />
         {children}
       </body>
