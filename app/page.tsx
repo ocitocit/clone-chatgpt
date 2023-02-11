@@ -1,13 +1,9 @@
-import Image from "next/image";
-import { Inter } from "@next/font/google";
-import styles from "./page.module.css";
-
-const inter = Inter({ subsets: ["latin"] });
-
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <p>ini page test</p>
+    <main className="h-full min-h-screen w-full md:border-y-[23px] md:border-r-[23px] md:border-white">
+      <section className="h-full w-full md:border-y-[5px] md:border-r-[5px] md:border-solid md:border-black">
+        ini page test
+      </section>
     </main>
   );
 }
