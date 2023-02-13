@@ -1,43 +1,37 @@
 'use client';
 import Image from 'next/image';
 import React, { useState } from 'react';
+import SideBar from './SideBar';
+import { GrAdd, GrClose, GrMenu } from 'react-icons/gr';
 
 const NavBar = () => {
   const [navbar, setNavbar] = useState(false);
 
   return (
-    <header className="h-full w-full md:w-[305px]">
+    <header className="md:w-[35%] 2xl:w-1/4 ">
       <nav className="h-full w-full border-b-2 border-solid border-black  md:border-y-[23px] md:border-l-[23px] md:border-white">
         <div className="h-full w-full bg-[#10A37F] md:border-[5px] md:border-solid md:border-black">
+          <div
+            className={`absolute top-0 left-0 h-full w-full ${navbar && ' bg-black/50'} md:hidden`}
+          ></div>
           <div className="flex justify-between p-2 md:hidden md:p-4">
-            <button onClick={() => setNavbar(!navbar)}>
-              <Image
-                className="relative z-50 sm:h-12 sm:w-12"
-                src={navbar ? '/icons/x-icon.svg' : '/icons/bars.svg'}
-                alt=""
-                width={23}
-                height={23}
-              />
+            <button className="relative z-50 sm:h-12 sm:w-12" onClick={() => setNavbar(!navbar)}>
+              {!navbar ? <GrMenu className="h-8 w-8" /> : <GrClose className="h-8 w-8" />}
             </button>
-            <button>
-              <Image
-                className="sm:h-12 sm:w-12 md:hidden"
-                src="/icons/plus.svg"
-                alt=""
-                width={23}
-                height={23}
-              />
+            <button className="sm:h-12 sm:w-12">
+              <GrAdd className="h-8 w-8" />
             </button>
           </div>
           <div
-            className={`absolute top-0 h-screen w-4/5 border-2 border-solid border-black bg-red-600 transition-all duration-300 ease-in md:static md:h-full md:border-none ${
-              navbar ? ' box-shadow left-0 ' : '-left-full'
+            className={`aniMenu absolute top-0 z-40 h-full w-11/12 border-2 border-solid border-black sm:w-4/5 md:static md:w-full md:border-none ${
+              navbar ? ' box-shadow left-0' : '-left-full'
             }`}
           >
-            <div>
-              <div className=" ">plus</div>
-              <div>chat</div>
-              <div>chat</div>
+            <div className="h-full bg-[#10A37F] md:bg-transparent">
+              <div className="p-2 md:hidden md:p-4">
+                <div className="h-[31px] w-[31px] sm:h-12 sm:w-12" />
+              </div>
+              <SideBar />
             </div>
           </div>
         </div>
