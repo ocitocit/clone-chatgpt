@@ -1,6 +1,8 @@
 import './globals.css';
 import { Jost } from '@next/font/google';
 import NavBar from '@/components/NavBar';
+import { SessionProvider } from "next-auth/react"
+
 
 const jost = Jost({
   variable: '--font-jost'
@@ -14,9 +16,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
-      <body className="m-0 flex h-screen w-screen flex-col overflow-hidden border-2 border-solid border-black font-jost md:flex-row md:border-none">
+      <SessionProvider>
+
+      <body className="body_">
         <NavBar />
         {children}
+      </SessionProvider>
       </body>
     </html>
   );

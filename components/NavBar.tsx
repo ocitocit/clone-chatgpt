@@ -9,8 +9,8 @@ const NavBar = () => {
 
   return (
     <header className="md:w-[35%] 2xl:w-1/4 ">
-      <nav className="h-full w-full border-b-2 border-solid border-black  md:border-y-[23px] md:border-l-[23px] md:border-white">
-        <div className="h-full w-full bg-[#10A37F] md:border-[5px] md:border-solid md:border-black">
+      <nav className="hw-full border-b-2 border-solid border-black  md:border-y-[23px] md:border-l-[23px] md:border-white">
+        <div className="hw-full bg-[#10A37F] md:border-[5px] md:border-solid md:border-black">
           <div
             className={`absolute top-0 left-0 h-full w-full ${navbar && ' bg-black/50'} md:hidden`}
           ></div>
