@@ -36,11 +36,11 @@ function SideBar() {
           {session && (
             <Image
               onClick={() => signOut()}
-              className="relative z-10 border-2 border-black bg-[#D9D9D9] hover:bg-white sm:h-24 sm:w-24 sm:border-[3px]"
+              className="btnNorm relative z-10 border-2 border-black bg-[#D9D9D9] hover:bg-white sm:h-24 sm:w-24 sm:border-[3px]"
               src={session.user?.image!}
               width={60}
               height={60}
-              alt=""
+              alt="Profile Picture"
             />
           )}
           <div className="shadowNorm"></div>
