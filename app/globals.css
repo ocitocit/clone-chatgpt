@@ -15,20 +15,24 @@
     filter: drop-shadow(5px 5px 0px #183643);
   }
 
-  .btnBig {
-    @apply -translate-x-2 -translate-y-2 focus:-translate-x-2 focus:-translate-y-2 active:translate-x-0 active:translate-y-0;
+
+  .btnBig{
+  @apply active:translate-x-2 active:translate-y-2 focus:translate-x-0 focus:translate-y-0
   }
 
-  .btnNorm {
-    @apply -translate-x-1 -translate-y-1 focus:-translate-x-1 focus:-translate-y-1 active:translate-x-0 active:translate-y-0;
+  .btnNorm{
+  @apply active:translate-x-1 active:translate-y-1 focus:translate-x-0 focus:translate-y-0
   }
-
+  
   .btn {
     @apply absolute z-10 flex h-full w-full items-center border-[3px] border-black;
   }
 
-  .shadowButton {
-    @apply absolute h-full w-full bg-[#183643];
+  .shadowBig{
+  @apply absolute h-full w-full bg-[#183643] top-2 left-2
+  }
+  .shadowNorm{
+    @apply absolute h-full w-full bg-[#183643] top-1 left-1
   }
 
   .aniMenu {
@@ -40,6 +44,6 @@
   }
 
   .infoText {
-    @apply -translate-x-1 -translate-y-1;
+    @apply translate-x-1 translate-y-1;
   }
 }

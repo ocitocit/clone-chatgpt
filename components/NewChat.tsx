@@ -7,7 +7,7 @@ function NewChat() {
       <button className="btn btnBig aniButton group justify-center bg-[#10A37F] hover:bg-white ">
         <GoPlus className="h-8 w-8 text-white group-hover:text-[#10a37f]" />
       </button>
-      <div className="shadowButton"></div>
+      <div className="shadowBig"></div>
     </div>
   );
 }

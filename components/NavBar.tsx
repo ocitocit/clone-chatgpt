@@ -1,5 +1,4 @@
 'use client';
-import Image from 'next/image';
 import React, { useState } from 'react';
 import SideBar from './SideBar';
 import { GrAdd, GrClose, GrMenu } from 'react-icons/gr';
