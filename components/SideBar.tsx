@@ -1,12 +1,17 @@
 'use client';
 
 import { signOut, useSession } from 'next-auth/react';
-import Image from 'next/image';
+import { useCollection } from 'react-firebase-hooks/firestore';
 import { BiMessageAltDetail, BiTrash } from 'react-icons/bi';
 import NewChat from './NewChat';
+import Image from 'next/image';
 
 function SideBar() {
   const { data: session } = useSession();
+
+const [chats,loading,error]=useCollection(
+    session && 
+  )
 
   return (
     <>

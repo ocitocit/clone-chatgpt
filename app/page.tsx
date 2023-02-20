@@ -1,4 +1,3 @@
-import NavBar from '@/components/NavBar';
 import { FiAlertTriangle, FiSun, FiZap } from 'react-icons/fi';
 
 export default function Home() {
