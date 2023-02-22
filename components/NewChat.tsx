@@ -15,17 +15,19 @@ function NewChat() {
       userId: session?.user?.email!,
       createdAt: serverTimestamp()
     });
-    console.log(doc)
     router.push(`/chat/${doc.id}`);
-
   };
 
   return (
-    <div onClick={createNewChat} className="relative mb-1 h-14 w-4/5">
-      <button className="btn btnBig aniButton group justify-center bg-[#10A37F] hover:bg-white ">
-        <GoPlus className="h-8 w-8 text-white group-hover:text-[#10a37f]" />
-      </button>
-      <div className="shadowBig"></div>
+    <div className="mb-2 flex w-full items-center justify-center">
+      <div onClick={createNewChat} className="relative h-14 w-4/5 md:mt-5">
+        <div>
+          <button className="btn btnBig aniButton group h-full justify-center bg-[#10A37F] hover:bg-white ">
+            <GoPlus className="h-8 w-8 text-white group-hover:text-[#10a37f]" />
+          </button>
+          <div className="shadowBig"></div>
+        </div>
+      </div>
     </div>
   );
 }

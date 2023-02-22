@@ -15,24 +15,23 @@
     filter: drop-shadow(5px 5px 0px #183643);
   }
 
-
-  .btnBig{
-  @apply active:translate-x-2 active:translate-y-2 focus:translate-x-0 focus:translate-y-0
+  .btnBig {
+    @apply focus:translate-x-0 focus:translate-y-0 active:translate-x-2 active:translate-y-2;
   }
 
-  .btnNorm{
-  @apply active:translate-x-1 active:translate-y-1 focus:translate-x-0 focus:translate-y-0
+  .btnNorm {
+    @apply focus:translate-x-0 focus:translate-y-0 active:translate-x-1 active:translate-y-1;
   }
-  
+
   .btn {
     @apply absolute z-10 flex h-full w-full items-center border-[3px] border-black;
   }
 
-  .shadowBig{
-  @apply absolute h-full w-full bg-[#183643] top-2 left-2
+  .shadowBig {
+    @apply absolute top-2 left-2 h-full w-full bg-[#183643];
   }
-  .shadowNorm{
-    @apply absolute h-full w-full bg-[#183643] top-1 left-1
+  .shadowNorm {
+    @apply absolute top-1 left-1 h-full w-full bg-[#183643];
   }
 
   .aniMenu {

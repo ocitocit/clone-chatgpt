@@ -1,3 +1,4 @@
+import ChatInput from '@/components/ChatInput';
 import { FiAlertTriangle, FiSun, FiZap } from 'react-icons/fi';
 
 export default function Home() {
@@ -5,7 +6,7 @@ export default function Home() {
     <main className="hw-full md:border-y-[23px] md:border-r-[23px] md:border-white">
       <div className="hw-full md:border-y-[5px] md:border-r-[5px] md:border-black">
         <section className="h-[80%] md:h-[90%]  ">
-          <div className="relative flex h-full flex-col justify-start overflow-y-auto md:justify-center">
+          <div className="relative flex h-full flex-col scrollbar-hide justify-start overflow-y-auto md:justify-center">
             <div className="flex flex-col ">
               {/* ---konten dalem scroll---  */}
               <div className="flex h-full flex-col items-center justify-center px-2">
@@ -102,7 +103,7 @@ export default function Home() {
           </div>
         </section>
         <section className="h-[20%] border-t-2 border-black bg-slate-600 md:h-[10%] md:border-t-[5px] ">
-          text chat
+          <ChatInput/>
         </section>
       </div>
     </main>
