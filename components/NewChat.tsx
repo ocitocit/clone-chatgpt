@@ -19,7 +19,7 @@ function NewChat() {
   };
 
   return (
-    <div className="mb-2 flex w-full items-center justify-center">
+    <div className="flex w-full items-center justify-center pt-11 pb-2 md:pt-0">
       <div onClick={createNewChat} className="relative h-14 w-4/5 md:mt-5">
         <div>
           <button className="btn btnBig aniButton group h-full justify-center bg-[#10A37F] hover:bg-white ">

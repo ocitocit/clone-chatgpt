@@ -4,9 +4,9 @@ import Image from 'next/image';
 
 function Login() {
   return (
-    <main className="hw-full md:border-[23px] md:border-white">
-      <section className="hw-full flex flex-col items-center justify-center bg-[#10A37F] md:border-[5px] md:border-black">
-        <div className="flex flex-col items-center">
+    <main className="h-full w-full bg-[#10A37F] md:border-[5px] md:border-black">
+      <section className="h-full w-full flex items-center">
+        <div className='flex-1 flex flex-col items-center justify-center'>
           <Image
             className=" mb-6 md:h-60 md:w-60"
             src="/icons/gpt-icon.svg"

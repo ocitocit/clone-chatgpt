@@ -18,17 +18,18 @@ function SideBar() {
 
   return (
     <>
-      <div className="flex h-[90%] w-full flex-col items-center sm:h-[85%] md:h-full">
+      <div className="flex h-full w-full bg-[#10A37F] flex-col md:border-l-[5px] md:border-y-[5px] md:border-black">
         <NewChat />
-        <div className="h-[90%] w-full overflow-y-auto scrollbar-hide">
-          <div className="mt-8 flex w-full flex-col items-center space-y-3">
-            {chats?.docs.map((chat) => (
-              <ChatRow key={chat.id} id={chat.id} />
-            ))}
+        <div className="flex-1 overflow-y-scroll scrollbar-hide ">
+          <div className='flex flex-col space-y-2 items-center pt-8'>
+          {chats?.docs.map((chat) => (
+            <ChatRow key={chat.id} id={chat.id} />
+          ))}
           </div>
         </div>
-        <div className="mb-10 flex h-auto w-full items-center justify-center self-end border-t-2 border-t-black pt-8 sm:mb-6 md:border-t-[5px]">
-          <div className="relative ">
+       
+        <div className='md:border-t-[5px] border-t-black border-t-2 p-6 flex items-center justify-center'>
+          <div className="relative">
             {session && (
               <Image
                 onClick={() => signOut()}

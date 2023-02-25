@@ -27,8 +27,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             <Login />
           ) : (
             <>
-              <NavBar />
-              {children}
+              <NavBar /> {children}
             </>
           )}
         </SessionProvider>

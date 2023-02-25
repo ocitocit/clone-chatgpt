@@ -4,11 +4,7 @@
 
 @layer components {
   .body_ {
-    @apply m-0 flex h-screen w-screen flex-col overflow-hidden border-2 border-solid border-black font-jost md:flex-row md:border-none;
-  }
-
-  .hw-full {
-    @apply h-full w-full;
+    @apply h-screen w-screen border-2 border-black font-jost flex flex-col md:flex-row  md:border-[23px] md:border-white;
   }
 
   .box-shadow {

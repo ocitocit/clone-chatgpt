@@ -33,32 +33,32 @@ function ChatRow({ id }: Props) {
   };
 
   return (
-    <Link className="flex h-11 w-4/5 justify-between" href={`chat/${id}`}>
-      <div className="relative w-4/5">
-        <button
-          className={`aniButton btn btnNorm hover:bg-green-400 hover:text-white ${
-            active ? 'bg-green-400 text-white' : 'bg-white text-black'
-          }`}
-        >
-          <BiMessageAltDetail className="min-w-5 mx-1 h-5 " />
-          <p className="truncate">
-            {messages?.docs[messages?.docs.length - 1]?.data().text || 'New Chat'}
-          </p>
-        </button>
-        <div className="shadowNorm"></div>
-      </div>
-      <div className="relative h-full w-[18%]">
-        <button
-          onClick={removeChat}
-          className={`aniButton btn btnNorm justify-center  hover:bg-[#F86250] hover:text-white ${
-            active ? 'bg-[#F86250] text-white' : 'bg-white'
-          }`}
-        >
-          <BiTrash className="h-5 w-5" />
-        </button>
-        <div className="shadowNorm"></div>
-      </div>
-    </Link>
+      <Link className="flex h-11 w-4/5 justify-between" href={`chat/${id}`}>
+        <div className="relative w-4/5">
+          <button
+            className={`aniButton btn btnNorm hover:bg-green-400 hover:text-white ${
+              active ? 'bg-green-400 text-white' : 'bg-white text-black'
+            }`}
+          >
+            <BiMessageAltDetail className="min-w-5 mx-1 h-5 " />
+            <p className="truncate">
+              {messages?.docs[messages?.docs.length - 1]?.data().text || 'New Chat'}
+            </p>
+          </button>
+          <div className="shadowNorm"></div>
+        </div>
+        <div className="relative h-full w-[18%]">
+          <button
+            onClick={removeChat}
+            className={`aniButton btn btnNorm justify-center  hover:bg-[#F86250] hover:text-white ${
+              active ? 'bg-[#F86250] text-white' : 'bg-white'
+            }`}
+          >
+            <BiTrash className="h-5 w-5" />
+          </button>
+          <div className="shadowNorm"></div>
+        </div>
+      </Link>
   );
 }
 
