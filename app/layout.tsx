@@ -5,6 +5,7 @@ import { getServerSession } from 'next-auth';
 import { authOptions } from '@/pages/api/auth/[...nextauth]';
 import Login from '@/components/Login';
 import { SessionProvider } from '@/components/SessionProvider';
+import ClientProvider from '@/components/ClientProvider';
 
 const jost = Jost({
   variable: '--font-jost'
@@ -27,7 +28,9 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             <Login />
           ) : (
             <>
-              <NavBar /> {children}
+              <NavBar />
+                <ClientProvider/>
+                {children}
             </>
           )}
         </SessionProvider>

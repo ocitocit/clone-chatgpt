@@ -18,7 +18,7 @@ function SideBar() {
 
   return (
     <>
-      <div className="flex h-full w-full bg-[#10A37F] flex-col md:border-l-[5px] md:border-y-[5px] md:border-black">
+      <div className="flex h-full w-full bg-[#10A37F] flex-col border-2 border-black md:border-l-[5px] md:border-y-[5px] md:border-black">
         <NewChat />
         <div className="flex-1 overflow-y-scroll scrollbar-hide ">
           <div className='flex flex-col space-y-2 items-center pt-8'>

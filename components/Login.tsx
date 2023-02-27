@@ -5,8 +5,8 @@ import Image from 'next/image';
 function Login() {
   return (
     <main className="h-full w-full bg-[#10A37F] md:border-[5px] md:border-black">
-      <section className="h-full w-full flex items-center">
-        <div className='flex-1 flex flex-col items-center justify-center'>
+      <section className="flex h-full w-full items-center">
+        <div className="flex flex-1 flex-col items-center justify-center">
           <Image
             className=" mb-6 md:h-60 md:w-60"
             src="/icons/gpt-icon.svg"
@@ -15,7 +15,7 @@ function Login() {
             width={69}
           />
           <div onClick={() => signIn('google')} className="relative h-10 w-52 md:h-14 md:w-72 ">
-            <button className="btn btnBig aniButton justify-center bg-[#D9D9D9] hover:bg-white">
+            <button className="btn btnBig aniButton justify-center bg-white hover:bg-[#D9D9D9]">
               <Image
                 src="/icons/g-icon.svg"
                 alt=""
