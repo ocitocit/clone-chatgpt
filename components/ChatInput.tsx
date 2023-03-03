@@ -41,16 +41,22 @@ function ChatInput({ chatId }: Props) {
       message
     );
 
-    const notification = toast.custom((t) => (
+    const notification = toast.custom(
       <div
-        className={`flex items-center border-2 border-black bg-[#10A37F] px-4 h-[76px] ${
-          t.visible ? 'animate-enter' : 'animate-leave'
-        }`}
+        className={`flex items-center border-2 border-black bg-[#10A37F] px-2 py-3 md:border-[3px] md:px-4 md:py-4 `}
       >
-        <Image className='mr-2' src='/icons/gpt-icon.svg' width={38} height={38} alt=""/>
-        <p className='font-bold text-white text-xl md:text-4xl'>LOADING<span>...</span></p> 
+        <Image
+          className="mr-2 md:h-9 md:w-9"
+          src="/icons/gpt-icon.svg"
+          width={24}
+          height={24}
+          alt=""
+        />
+        <p className="font-bold text-white md:text-4xl">
+          LOADING<span>...</span>
+        </p>
       </div>
-    ));
+    );
 
     await fetch('/api/askQuestion', {
       method: 'POST',
@@ -65,13 +71,20 @@ function ChatInput({ chatId }: Props) {
       })
     }).then(() => {
       toast.custom(
-        (
-          <div
-            className={`rounded-full bg-white px-6 py-4 shadow-md`}
-          >
-            Finish 👋
-          </div>
-        ),
+        <div
+          className={`flex items-center border-2 border-black bg-[#10A37F] px-2 py-3 md:border-[3px] md:px-4 md:py-4 `}
+        >
+          <Image
+            className="mr-2 md:h-9 md:w-9"
+            src="/icons/gpt-icon.svg"
+            width={24}
+            height={24}
+            alt=""
+          />
+          <p className="font-bold text-white md:text-4xl">
+            DONE!
+          </p>
+        </div>,
         {
           id: notification
         }
