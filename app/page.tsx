@@ -4,7 +4,7 @@ import { FiAlertTriangle, FiSun, FiZap } from 'react-icons/fi';
 export default function Home() {
   return (
     <main className="flex h-full w-full flex-col overflow-hidden md:border-[5px] md:border-black">
-      <div className="relative flex flex-1 flex-col items-center md:justify-center justify-start overflow-y-scroll scrollbar-hide">
+      <div className="relative flex flex-1 flex-col items-center justify-start overflow-y-scroll scrollbar-hide md:justify-center">
         <h1 className="mb-20 mt-10 text-5xl font-bold md:mb-10">ChatGPT</h1>
 
         <div className="flex flex-col space-y-2 text-center md:flex-row md:space-y-0 md:space-x-4">
@@ -15,23 +15,20 @@ export default function Home() {
               <p className="text-lg font-medium">Exampel</p>
             </div>
             <div className="space-y-2">
-              <div className="relative flex h-16 w-64 cursor-pointer items-center">
-                <p className="btnNorm btn bg-[#D9D9D9] p-2">&quot;Explain abaout Algebra&quot;</p>
+              <div className="relative flex h-16 w-64 items-center">
+                <p className="btn bg-[#D9D9D9] p-2">&quot;Explain abaout Algebra&quot;</p>
                 <div className="shadowNorm"></div>
               </div>
-              <div className="relative flex h-16 w-64 cursor-pointer items-center">
-                <p className="btnNorm btn bg-[#D9D9D9] p-2">
-                  &quot;Make a joke about my loneliness&quot;
-                </p>
+              <div className="relative flex h-16 w-64 items-center">
+                <p className="btn bg-[#D9D9D9] p-2">&quot;Make a joke about my loneliness&quot;</p>
                 <div className="shadowNorm"></div>
               </div>
-              <div className="relative flex h-16 w-64 cursor-pointer items-center">
-                <p className="btnNorm btn bg-[#D9D9D9] p-2">&quot;How Do I make a web ?&quot;</p>
+              <div className="relative flex h-16 w-64 items-center">
+                <p className="btn bg-[#D9D9D9] p-2">&quot;How Do I make a web ?&quot;</p>
                 <div className="shadowNorm"></div>
               </div>
             </div>
           </div>
-          {/* kotak-kotak */}
           <div className="mb-8">
             <div className="mb-5 flex items-center justify-center md:flex-col">
               <FiZap className="mr-2 h-6 w-6 md:mr-0 md:mb-2" />
@@ -56,7 +53,6 @@ export default function Home() {
               </div>
             </div>
           </div>
-          {/* kotak-kotak */}
           <div className="mb-8">
             <div className="mb-5 flex items-center justify-center md:flex-col">
               <FiAlertTriangle className="mr-2 h-6 w-6 md:mr-0 md:mb-2" />
@@ -83,10 +79,8 @@ export default function Home() {
               </div>
             </div>
           </div>
-          {/* kotak-kotak */}
         </div>
       </div>
-      <ChatInput />
     </main>
   );
 }

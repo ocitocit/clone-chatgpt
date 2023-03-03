@@ -6,6 +6,7 @@ import { useSession } from 'next-auth/react';
 import { FormEvent, useState } from 'react';
 import { RxPaperPlane } from 'react-icons/rx';
 import { toast } from 'react-hot-toast';
+import Image from 'next/image';
 
 type Props = {
   chatId: string;
@@ -36,18 +37,20 @@ function ChatInput({ chatId }: Props) {
     };
 
     await addDoc(
-      collection(
-        db,
-        'users',
-        session?.user?.email!,
-        'chats',
-        chatId,
-        'messages'
-      ),
+      collection(db, 'users', session?.user?.email!, 'chats', chatId, 'messages'),
       message
     );
 
-    const notification = toast.loading('loading');
+    const notification = toast.custom((t) => (
+      <div
+        className={`flex items-center border-2 border-black bg-[#10A37F] px-4 h-24 ${
+          t.visible ? 'animate-enter' : 'animate-leave'
+        }`}
+      >
+        <Image src='icons/gpt-icon.svg' width={38} height={38} alt=""/>
+        <p className='font-bold'>LOADING<span>...</span></p> 
+      </div>
+    ));
 
     await fetch('/api/askQuestion', {
       method: 'POST',
@@ -61,18 +64,24 @@ function ChatInput({ chatId }: Props) {
         session
       })
     }).then(() => {
-      toast.success('finish', {
-        id: notification
-      });
+      toast.custom(
+        (
+          <div
+            className={`rounded-full bg-white px-6 py-4 shadow-md`}
+          >
+            Finish 👋
+          </div>
+        ),
+        {
+          id: notification
+        }
+      );
     });
   };
 
   return (
-    <div className="bg-[#D9D9D9] text-sm">
-      <form
-        onSubmit={sendMessage}
-        className=" flex space-x-5 border-t-2 border-black p-5 md:border-t-[5px] "
-      >
+    <div className="relative mx-auto mb-3 h-12 w-[93%] md:mb-6 md:w-[95%]">
+      <form onSubmit={sendMessage} className="btn box-shadow flex bg-[#d9d9d9] p-2">
         <input
           className="flex-1 bg-transparent focus:outline-none disabled:cursor-not-allowed disabled:text-green-400"
           disabled={!session}
@@ -89,7 +98,6 @@ function ChatInput({ chatId }: Props) {
           <RxPaperPlane className="h-4 w-4" />
         </button>
       </form>
-      <div>{/* Model selection*/}</div>
     </div>
   );
 }
