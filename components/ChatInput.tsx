@@ -43,12 +43,12 @@ function ChatInput({ chatId }: Props) {
 
     const notification = toast.custom((t) => (
       <div
-        className={`flex items-center border-2 border-black bg-[#10A37F] px-4 h-24 ${
+        className={`flex items-center border-2 border-black bg-[#10A37F] px-4 h-[76px] ${
           t.visible ? 'animate-enter' : 'animate-leave'
         }`}
       >
-        <Image src='icons/gpt-icon.svg' width={38} height={38} alt=""/>
-        <p className='font-bold'>LOADING<span>...</span></p> 
+        <Image className='mr-2' src='/icons/gpt-icon.svg' width={38} height={38} alt=""/>
+        <p className='font-bold text-white text-xl md:text-4xl'>LOADING<span>...</span></p> 
       </div>
     ));
 
