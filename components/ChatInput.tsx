@@ -6,6 +6,7 @@ import { useSession } from 'next-auth/react';
 import { FormEvent, useState } from 'react';
 import { RxPaperPlane } from 'react-icons/rx';
 import { toast } from 'react-hot-toast';
+import useSWR from 'swr';
 import Image from 'next/image';
 
 type Props = {
@@ -16,8 +17,10 @@ function ChatInput({ chatId }: Props) {
   const [prompt, setPrompt] = useState('');
   const { data: session } = useSession();
 
-  //TODO: useSWR to get model
-  const model = 'text-davinci-003';
+const { data: model} = useSWR('model', {
+    fallbackData: 'text-davinci-003'
+  });
+
 
   const sendMessage = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
