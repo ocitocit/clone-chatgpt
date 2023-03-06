@@ -21,7 +21,6 @@ const { data: model} = useSWR('model', {
     fallbackData: 'text-davinci-003'
   });
 
-
   const sendMessage = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!prompt) return;
@@ -73,9 +72,11 @@ const { data: model} = useSWR('model', {
         session
       })
     }).then(() => {
-      toast.custom(
+      toast.custom((t) => 
         <div
-          className={`flex items-center border-2 border-black bg-[#10A37F] px-2 py-3 md:border-[3px] md:px-4 md:py-4 `}
+          className={`flex items-center border-2 border-black bg-[#10A37F] px-2 py-3 md:border-[3px] md:px-4 md:py-4 ${
+      t.visible ? 'animate-enter' : 'animate-leave'
+    }`}
         >
           <Image
             className="mr-2 md:h-9 md:w-9"
