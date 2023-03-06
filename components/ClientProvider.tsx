@@ -6,6 +6,7 @@ export default function ClientProvider() {
   return (
     <>
       <Toaster
+        toastOptions={{ duration: 1000 }}
         containerStyle={{
           position: 'absolute',
           left: '50%',
