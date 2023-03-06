@@ -17,7 +17,7 @@ function ChatInput({ chatId }: Props) {
   const [prompt, setPrompt] = useState('');
   const { data: session } = useSession();
 
-const { data: model} = useSWR('model', {
+  const { data: model } = useSWR('model', {
     fallbackData: 'text-davinci-003'
   });
 
@@ -43,22 +43,7 @@ const { data: model} = useSWR('model', {
       message
     );
 
-    const notification = toast.custom(
-      <div
-        className={`flex items-center border-2 border-black bg-[#10A37F] px-2 py-3 md:border-[3px] md:px-4 md:py-4 `}
-      >
-        <Image
-          className="animate-spin md:h-9 md:w-9"
-          src="/icons/gpt-icon.svg"
-          width={24}
-          height={24}
-          alt=""
-        />
-        <p className="ml-2 font-bold text-white md:text-4xl">
-          LOADING<span>...</span>
-        </p>
-      </div>
-    );
+    const notification = toast.loading('Loading ...');
 
     await fetch('/api/askQuestion', {
       method: 'POST',
@@ -72,25 +57,9 @@ const { data: model} = useSWR('model', {
         session
       })
     }).then(() => {
-      toast.custom(
-        <div
-          className={`flex items-center border-2 border-black bg-[#10A37F] px-2 py-3 md:border-[3px] md:px-4 md:py-4 `}
-        >
-          <Image
-            className="mr-2 md:h-9 md:w-9"
-            src="/icons/gpt-icon.svg"
-            width={24}
-            height={24}
-            alt=""
-          />
-          <p className="font-bold text-white md:text-4xl">
-            DONE!
-          </p>
-        </div>,
-        {
-          id: notification
-        }
-      );
+      toast.success('Done!', {
+        id: notification
+      });
     });
   };
 
