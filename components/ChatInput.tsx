@@ -72,11 +72,9 @@ const { data: model} = useSWR('model', {
         session
       })
     }).then(() => {
-      toast.custom((t) => 
+      toast.custom(
         <div
-          className={`flex items-center border-2 border-black bg-[#10A37F] px-2 py-3 md:border-[3px] md:px-4 md:py-4 ${
-      t.visible ? 'animate-enter' : 'animate-leave'
-    }`}
+          className={`flex items-center border-2 border-black bg-[#10A37F] px-2 py-3 md:border-[3px] md:px-4 md:py-4 `}
         >
           <Image
             className="mr-2 md:h-9 md:w-9"
