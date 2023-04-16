@@ -14,7 +14,7 @@ const query = async (prompt: string, chatId: string, model: string) => {
     .then((res) => res.data.choices[0].text)
     .catch(
       (err) =>
-        `I am sorry to say, currently my token API get expired, pleasec onsider sponsoring on my github project \n(Error:${err.message})`
+        `I am sory to say, currently my token API get expired, please consider sponsoring on my github project \n(Error:${err.message})`
     );
 
   return res;

@@ -11,7 +11,7 @@ function Message({ message }: Props) {
   return (
     <div className="relative px-5 pt-5 md:px-10 ">
       <div
-        className={`box-shadow mx-auto flex border-2 border-black p-5 ${
+        className={`whitespace-pre-line box-shadow mx-auto flex border-2 border-black p-5 ${
           !isChatGPT && 'flex-row-reverse bg-[#D9D9D9]'
         }`}
       >
