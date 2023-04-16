@@ -12,7 +12,10 @@ const query = async (prompt: string, chatId: string, model: string) => {
       presence_penalty: 0
     })
     .then((res) => res.data.choices[0].text)
-    .catch((err) => `ChatGPT was unable to find an answer for that! (Error:${err.message})`);
+    .catch(
+      (err) =>
+        `I am sorry to say, currently my token API get expired, pleasec onsider sponsoring on my github project \n(Error:${err.message})`
+    );
 
   return res;
 };
